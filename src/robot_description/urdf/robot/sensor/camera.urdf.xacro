@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- 输入robot可以快速生成robot编写样本 -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+	<xacro:include filename="$(find robot_description)/urdf/robot/common_inertia.xacro"/>
+	<xacro:macro name="camera_xacro" params="xyz">
+		<!-- 机器人的IMU组件，惯性测量单元传感器 -->
+		<!-- ctrl+/可以快速生成urdf注释 -->
+		<!-- 机器人的身体部分 -->
+		<!-- 输入link可以快速生成机器人部件link -->
+		<link name="camera_link">
+			<!-- 部件的外观描述 -->
+			<!-- visual可视化部件 -->
+			<visual>
+				<!-- 1.沿着自己的几何中心的偏移量和旋转量 载体坐标系的相对量-->
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+				<!-- 2.几何形状 -->
+				<geometry>
+					<!-- 摄像头模块 (适配大型车体) -->
+					<box size="0.04 0.25 0.04"/>
+				</geometry>
+				<!-- 3.材质颜色 -->
+				<material name="black">
+					<!-- 四个值分别表示红绿蓝和透明度 -->
+					<color rgba="0.0 0.0 0.0 0.5"/>
+				</material>
+			</visual>
+
+			<collision>
+				<!-- 1.沿着自己的几何中心的偏移量和旋转量 载体坐标系的相对量-->
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+				<!-- 2.几何形状 -->
+				<geometry>
+					<!-- IMU的几何形状我们设置成棱为0.02的立方体 -->
+					<box size="0.04 0.25 0.04"/>
+				</geometry>
+				<!-- 3.材质颜色 -->
+				<material name="black">
+					<!-- 四个值分别表示红绿蓝和透明度 -->
+					<color rgba="0.0 0.0 0.0 0.5"/>
+				</material>
+			</collision>
+
+			<xacro:box_inertia m="0.2" w="0.04" h="0.25" d="0.04"/>
+		</link>
+		<!-- 虚拟部件 用于实现深度相机的朝向调整 -->
+		<link name="camera_optical_link"></link>
+
+		<!-- 机器人的关节，用于组合机器人的部件 -->
+		<joint name="camera_joint" type="fixed">
+			<!-- 表示固定的位置 固定在几何中心向上3厘米的位置-->
+			<origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+			<!-- 表示该关节固定机器人本体base_link和惯性测量单元IMU_link -->
+			<parent link="base_link"/>
+			<child link="camera_link"/>
+		</joint>
+
+		<joint name="camera_optical_joint" type="fixed">
+			<!-- 表示固定的位置 固定在几何中心向上3厘米的位置-->
+			<origin xyz="0 0 0" rpy="${-pi/2} 0.0 ${-pi/2}"/>
+			<!-- 表示该关节固定机器人本体base_link和惯性测量单元IMU_link -->
+			<parent link="camera_link"/>
+			<child link="camera_optical_link"/>
+		</joint>
+	</xacro:macro>
+</robot>

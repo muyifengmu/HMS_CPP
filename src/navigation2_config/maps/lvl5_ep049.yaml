@@ -1,0 +1,10 @@
+free_thresh: 0.25
+image: lvl5_ep049.pgm
+mode: trinary
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -14.49950788515335
+- -10.21489952136119
+- 0.0
+resolution: 0.05

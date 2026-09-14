@@ -1,0 +1,10 @@
+free_thresh: 0.25
+image: eval_lvl1_ep000.pgm
+mode: trinary
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -7.509317140697904
+- -5.677121906201399
+- 0.0
+resolution: 0.05

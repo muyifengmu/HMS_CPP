@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="gazebo_control_plugin">
+        <gazebo>
+            <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+                <ros>
+                    <!-- 命名空间 用于实现组件自动命名 -->
+                    <!-- 而remapping则是更改话题的值 -->
+                    <namespace>/</namespace>
+                    <remapping>cmd_vel:=cmd_vel</remapping>
+                    <remapping>odom:=odom</remapping>
+                </ros>
+                <!-- 发布信息的更新频率 -->
+                <update_rate>30</update_rate>
+                <!-- wheels -->
+                <!-- 差速控制插件对左轮和右轮关节进行控制 -->
+                <left_joint>left_wheel_joint</left_joint>
+                <right_joint>right_wheel_joint</right_joint>
+                <!-- kinematics -->
+                <!-- 运动学相关设置 控制角速度和线速度 两轮距离和两轮直径设置 -->
+                <wheel_separation>0.2</wheel_separation>
+                <wheel_diameter>0.064</wheel_diameter>
+                <!-- limits 扭矩和加速度限制-->
+                <max_wheel_torque>20</max_wheel_torque>
+                <max_wheel_acceleration>1.0</max_wheel_acceleration>
+                <!-- output 里程计 里程计输出的动态tf 轮子的tf -->
+                <publish_odom>true</publish_odom>
+                <!-- 【根治 RViz 崩溃】P3D 真值广播器已接管 odom→base_footprint，此处必须关闭防止 TF 双源冲突 -->
+                <publish_odom_tf>false</publish_odom_tf>
+                <publish_wheel_tf>true</publish_wheel_tf>
+
+                <odometry_frame>odom</odometry_frame>
+                <robot_base_frame>base_footprint</robot_base_frame>
+            </plugin>
+        </gazebo>
+   </xacro:macro>
+</robot>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!-- 输入robot可以快速生成robot编写样本 -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+	<xacro:include filename="$(find robot_description)/urdf/robot/common_inertia.xacro"/>
+	<xacro:macro name="caster_xacro" params="caster_name xyz">
+		<!-- 机器人的IMU组件，惯性测量单元传感器 -->
+		<!-- ctrl+/可以快速生成urdf注释 -->
+		<!-- 机器人的身体部分 -->
+		<!-- 输入link可以快速生成机器人部件link -->
+		<link name="${caster_name}_link">
+			<!-- 部件的外观描述 -->
+			<!-- visual可视化部件 -->
+			<visual>
+				<!-- 1.沿着自己的几何中心(即轮子的joint中心)的偏移量和旋转量 载体坐标系的相对量-->
+				<origin xyz="0.0 0.0 0.0" rpy="0 0.0 0.0"/>
+				<!-- 2.几何形状 -->
+				<geometry>
+					<!-- 万向轮的几何形状我们设置成半径为 0.08 的球体 (适配 0.1m 主轮) -->
+					<sphere radius="0.08"/>
+				</geometry>
+				<!-- 3.材质颜色 -->
+				<material name="yellow">
+					<!-- 四个值分别表示红绿蓝和透明度 -->
+					<color rgba="1.0 1.0 0.0 0.8"/>
+				</material>
+			</visual>
+
+			<collision>
+				<!-- 1.沿着自己的几何中心(即轮子的joint中心)的偏移量和旋转量 载体坐标系的相对量-->
+				<origin xyz="0.0 0.0 0.0" rpy="0 0.0 0.0"/>
+				<!-- 2.几何形状 -->
+				<geometry>
+					<!-- 万向轮的几何形状我们设置成半径为 0.08 的球体 -->
+					<sphere radius="0.08"/>
+				</geometry>
+				<!-- 3.材质颜色 -->
+				<material name="yellow">
+					<!-- 四个值分别表示红绿蓝和透明度 -->
+					<color rgba="1.0 1.0 0.0 0.8"/>
+				</material>
+			</collision>
+
+			<xacro:sphere_inertia m="0.2" r="0.08"/>
+		</link>
+
+		<!-- 机器人的关节，用于组合机器人的部件 -->
+		<joint name="${caster_name}_joint" type="fixed">
+			<!-- 表示固定的位置 固定在几何中心向上3厘米的位置-->
+			<origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+			<!-- 表示该关节固定机器人本体base_link -->
+			<parent link="base_link"/>
+			<child link="${caster_name}_link"/>
+		</joint>
+
+		<gazebo reference="${caster_name}_link">
+			<!-- mu1切向摩擦 mu2径向摩擦 kp刚度系数 kd阻尼系数-->
+			<mu1 value="0.0"/> 
+			<mu2 value="0.0"/>
+			<kp value="1000000000.0"/>
+			<kd value="1.0"/>
+		</gazebo>
+	</xacro:macro>
+</robot>

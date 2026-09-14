@@ -1,0 +1,30 @@
+# 请求消息 - 输入状态信息
+# 1. 环境状态
+nav_msgs/OccupancyGrid occupancy_grid    # 当前地图状态
+nav_msgs/Path current_path               # 当前路径
+
+# 2. 机器人状态
+geometry_msgs/PoseStamped robot_pose     # 机器人位姿
+geometry_msgs/Twist robot_velocity       # 机器人速度
+
+# 3. 感知信息
+Detection[] detections                   # 当前检测到的目标
+CoverageStatus coverage_status           # 覆盖状态
+
+# 4. 任务目标
+geometry_msgs/PoseStamped goal_pose     # 目标位姿
+int8 task_type                          # 任务类型 (0:全覆盖, 1:点对点, 2:避障)
+
+---
+# 响应消息 - DQN决策结果
+int32 action                             # 动作指令 (0:前进, 1:左转, 2:右转, 3:后退, 4:停止)
+float32[] q_values                       # 所有动作的Q值 (用于调试和分析)
+float32 confidence                      # 决策置信度
+
+# 建议的下一个状态
+geometry_msgs/PoseStamped suggested_pose # 建议的下一个位姿
+nav_msgs/Path suggested_path            # 建议的路径片段
+
+# 调试信息
+string debug_info
+bool success                            # 预测是否成功

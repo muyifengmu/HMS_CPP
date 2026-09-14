@@ -1,0 +1,5 @@
+<library path="sac_planner">
+  <class name="sac_planner/SACPlanner" type="sac_planner::SACPlanner" base_class_type="nav2_core::GlobalPlanner">
+    <description>SAC-based global path planner plugin for Navigation2</description>
+  </class>
+</library>

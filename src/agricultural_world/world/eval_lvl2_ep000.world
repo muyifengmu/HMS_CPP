@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="eval_lvl2_ep000">
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <pose>0 0 10 0 0 0</pose>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <atmosphere type="adiabatic"/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <model name="eval_lvl2_ep000_field">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>18.972759425868084 11.38365565552085</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>18.972759425868084 11.38365565552085</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grass</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>0.0 0.0 0.01 0 0 0</pose>
+    </model>
+    <model name="eval_lvl2_ep000_boundary_0">
+      <static>true</static>
+      <pose>0.0 -5.691827827760425 0.5 0 0 0.0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>18.972759425868084 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>18.972759425868084 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl2_ep000_boundary_1">
+      <static>true</static>
+      <pose>7.589103770347233 0.0 0.5 0 0 1.892546881191539</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>11.999426656834338 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>11.999426656834338 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl2_ep000_boundary_2">
+      <static>true</static>
+      <pose>0.0 5.691827827760425 0.5 0 0 3.141592653589793</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>11.38365565552085 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>11.38365565552085 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl2_ep000_boundary_3">
+      <static>true</static>
+      <pose>-7.589103770347233 0.0 0.5 0 0 -1.892546881191539</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>11.999426656834338 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>11.999426656834338 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_0">
+      <static>true</static>
+      <pose>0.18231306775451017 -3.0156032595311286 0.5 0 0 4.587684844338088</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0922773844771432 1.0922773844771432 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0922773844771432 1.0922773844771432 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_1">
+      <static>true</static>
+      <pose>1.1939200494146576 2.876645521156875 1.0 0 0 4.976761224997656</pose>
+      <link name="link">
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.09837319670123626</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="trunk_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.09837319670123626</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.0 1</ambient>
+            <diffuse>0.5 0.3 0.1 1</diffuse>
+          </material>
+        </visual>
+        <collision name="crown_collision">
+          <pose>0 0 0.9837319670123625 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.7869855736098901</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="crown_visual">
+          <pose>0 0 0.9837319670123625 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.7869855736098901</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.1 0.5 0.1 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+  </world>
+</sdf>

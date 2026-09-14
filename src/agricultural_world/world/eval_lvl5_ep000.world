@@ -1,0 +1,916 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="eval_lvl5_ep000">
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <pose>0 0 10 0 0 0</pose>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <atmosphere type="adiabatic"/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <model name="eval_lvl5_ep000_field">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>16.735694553609477 23.920495001508208</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>16.735694553609477 23.920495001508208</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grass</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>1.6125757476920934 1.0931630792911786 0.01 0 0 0</pose>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_0">
+      <static>true</static>
+      <pose>-4.800457919085142 -5.055350329046413 0.5 0 0 -1.490851708856075</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3.2945891925479134 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3.2945891925479134 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_1">
+      <static>true</static>
+      <pose>-4.134979083006348 -7.988133066880042 0.5 0 0 -1.1785729148689155</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.793644021988193 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.793644021988193 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_2">
+      <static>true</static>
+      <pose>-2.6647509929640183 -10.218347870405477 0.5 0 0 -0.7870849704738967</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.652738589396461 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.652738589396461 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_3">
+      <static>true</static>
+      <pose>-0.38977364895815303 -11.745994739622715 0.5 0 0 -0.4139835599299639</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.9243876716163637 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.9243876716163637 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_4">
+      <static>true</static>
+      <pose>2.689952949011248 -12.571073674531757 0.5 0 0 -0.13523532539314187</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3.514187048561351 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3.514187048561351 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_5">
+      <static>true</static>
+      <pose>5.832249929400796 -12.228880020192529 0.5 0 0 0.39189224469863115</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3.032383834512504 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3.032383834512504 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_6">
+      <static>true</static>
+      <pose>8.294938420667105 -10.254709121664956 0.5 0 0 0.9203892626120022</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3.5059417672607043 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3.5059417672607043 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_7">
+      <static>true</static>
+      <pose>10.078018422810171 -6.648560978949034 0.5 0 0 1.2553211123357346</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4.651702750510546 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4.651702750510546 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_8">
+      <static>true</static>
+      <pose>11.18148993583 -1.4104355920447678 0.5 0 0 1.4453188128329126</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6.102088505656533 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6.102088505656533 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_9">
+      <static>true</static>
+      <pose>11.507796588734202 3.90765073668621 0.5 0 0 1.5950282788098689</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4.583404241454112 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4.583404241454112 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_10">
+      <static>true</static>
+      <pose>10.959382010530389 7.753681704882265 0.5 0 0 1.8777475654668256</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3.262494932341646 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3.262494932341646 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_11">
+      <static>true</static>
+      <pose>9.536246201218564 10.127657312543397 0.5 0 0 2.4197224492846305</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.478773963029256 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.478773963029256 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_12">
+      <static>true</static>
+      <pose>7.238389160798725 11.029577559669606 0.5 0 0 3.081016266677216</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.7402437791718515 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.7402437791718515 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_13">
+      <static>true</static>
+      <pose>4.6381200479141365 11.073728084769611 0.5 0 0 -3.110129843808412</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.4665412940620715 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.4665412940620715 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_14">
+      <static>true</static>
+      <pose>2.307748021208056 10.87439452635213 0.5 0 0 -2.9963744572147046</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.218777549337644 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.218777549337644 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_15">
+      <static>true</static>
+      <pose>0.24727308068048426 10.431576884417167 0.5 0 0 -2.8563882341562596</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.006584048497376 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.006584048497376 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_16">
+      <static>true</static>
+      <pose>-1.5433047736685777 9.745275158964718 0.5 0 0 -2.6875438937767444</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.8422929045164016 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.8422929045164016 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_17">
+      <static>true</static>
+      <pose>-3.0067336379300027 8.831474220667012 0.5 0 0 -2.4656176296009633</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.6295767632327824 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.6295767632327824 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_18">
+      <static>true</static>
+      <pose>-4.085761608194664 7.7061589401962705 0.5 0 0 -2.1950629404228232</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.5172351291101194 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.5172351291101194 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_19">
+      <static>true</static>
+      <pose>-4.780388684462561 6.369329317552496 0.5 0 0 -1.9059395771709304</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.5275762420397112 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.5275762420397112 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_20">
+      <static>true</static>
+      <pose>-5.090614866733693 4.820985352735688 0.5 0 0 -1.6420289984953274</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.658306558505798 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.658306558505798 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_21">
+      <static>true</static>
+      <pose>-5.160999358960222 2.9631385206968135 0.5 0 0 -1.5818277630755444</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.061717974798661 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.061717974798661 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_22">
+      <static>true</static>
+      <pose>-5.136101365094306 0.6978002963868384 0.5 0 0 -1.54142576674915</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.4701492560358456 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.4701492560358456 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="eval_lvl5_ep000_boundary_23">
+      <static>true</static>
+      <pose>-5.015920885135946 -1.975029320194237 0.5 0 0 -1.5125215762468027</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2.8814665815245855 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.8814665815245855 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.6 0.5 0.4 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_0">
+      <static>true</static>
+      <pose>-1.1663779017530445 8.41703075849251 0.5 0 0 1.9402526848852661</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.1795060432001985 1.1795060432001985 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.1795060432001985 1.1795060432001985 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_1">
+      <static>true</static>
+      <pose>5.970554849450837 -6.961996933048262 0.5 0 0 5.598861418592702</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0671568125233963 1.0671568125233963 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0671568125233963 1.0671568125233963 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_2">
+      <static>true</static>
+      <pose>4.789618713053176 -2.8638787785048336 0.5 0 0 5.710641069658068</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0926967242785421 1.0926967242785421 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0926967242785421 1.0926967242785421 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_3">
+      <static>true</static>
+      <pose>0.6616660167835704 -5.409112858529618 0.5 0 0 0.44966482774324595</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.7488510608666854 0.7488510608666854 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.7488510608666854 0.7488510608666854 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_4">
+      <static>true</static>
+      <pose>8.44828531718212 -7.944120174332568 1.0 0 0 1.550730710416903</pose>
+      <link name="link">
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.13615487091903172</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="trunk_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.13615487091903172</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.0 1</ambient>
+            <diffuse>0.5 0.3 0.1 1</diffuse>
+          </material>
+        </visual>
+        <collision name="crown_collision">
+          <pose>0 0 1.3615487091903171 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>1.0892389673522538</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="crown_visual">
+          <pose>0 0 1.3615487091903171 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>1.0892389673522538</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.1 0.5 0.1 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_5">
+      <static>true</static>
+      <pose>-4.670183454255946 1.9387562550077515 1.0 0 0 6.021796084686945</pose>
+      <link name="link">
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.09725243786806788</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="trunk_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.09725243786806788</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.0 1</ambient>
+            <diffuse>0.5 0.3 0.1 1</diffuse>
+          </material>
+        </visual>
+        <collision name="crown_collision">
+          <pose>0 0 0.9725243786806788 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.778019502944543</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="crown_visual">
+          <pose>0 0 0.9725243786806788 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.778019502944543</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.1 0.5 0.1 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_6">
+      <static>true</static>
+      <pose>8.409381720624957 5.77591843441464 1.0 0 0 5.6431339644824865</pose>
+      <link name="link">
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.10239349200922471</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="trunk_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.10239349200922471</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.0 1</ambient>
+            <diffuse>0.5 0.3 0.1 1</diffuse>
+          </material>
+        </visual>
+        <collision name="crown_collision">
+          <pose>0 0 1.023934920092247 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.8191479360737977</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="crown_visual">
+          <pose>0 0 1.023934920092247 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.8191479360737977</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.1 0.5 0.1 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_7">
+      <static>true</static>
+      <pose>4.941374955614226 -3.782829538292754 1.0 0 0 1.1242817485324645</pose>
+      <link name="link">
+        <collision name="trunk_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.14875835762107426</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name="trunk_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.14875835762107426</radius>
+              <length>2.0</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.0 1</ambient>
+            <diffuse>0.5 0.3 0.1 1</diffuse>
+          </material>
+        </visual>
+        <collision name="crown_collision">
+          <pose>0 0 1.4875835762107426 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>1.190066860968594</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="crown_visual">
+          <pose>0 0 1.4875835762107426 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>1.190066860968594</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.1 0.5 0.1 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+  </world>
+</sdf>

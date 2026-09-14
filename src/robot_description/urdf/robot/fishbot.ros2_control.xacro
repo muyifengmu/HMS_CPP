@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="fishbot_ros2_control">
+        <ros2_control name="FishBotGazeboSystem" type="system">
+            <!-- 硬件使用模拟的gazebo_ros2_control/GazeboSystem gazebo仿真插件 而非真实硬件-->
+            <hardware>
+                <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+            </hardware>
+            <!-- 命令接口：可以向关节发送的命令类型 -->
+            <joint name="left_wheel_joint">
+                <!-- 速度控制接口，范围[-1, 1] -->
+                <command_interface name="velocity">
+                    <param name="min">-1</param>
+                    <param name="max">1</param>
+                </command_interface>
+                <!-- 力矩控制接口，范围[-0.1, 0.1] -->
+                <command_interface name="effort">
+                    <param name="min">-0.1</param>
+                    <param name="max">0.1</param>
+                </command_interface>
+                <!-- 状态接口：可以从关节读取的状态类型 -->
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+                <state_interface name="effort" />
+            </joint>
+            <joint name="right_wheel_joint">
+                <command_interface name="velocity">
+                    <param name="min">-1</param>
+                    <param name="max">1</param>
+                </command_interface>
+                <command_interface name="effort">
+                    <param name="min">-0.1</param>
+                    <param name="max">0.1</param>
+                </command_interface>
+                <state_interface name="position" />
+                <state_interface name="velocity" />
+                <state_interface name="effort" />
+            </joint>
+        </ros2_control>
+
+        <!-- 指向控制器配置文件：fishbot_ros2_controller.yaml -->
+        <!-- 这个文件定义了要加载哪些控制器（如差速控制器、状态广播器等） -->
+        <gazebo>
+            <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+                <parameters>$(find robot_description)/config/fishbot_ros2_controller.yaml</parameters>
+                <ros>
+                    <!-- 将外部插件的数据接口映射到ros2的标准接口 供其他节点使用(发布或者订阅) -->
+                    <remapping>/fishbot_diff_drive_controller/cmd_vel_unstamped:=/cmd_vel</remapping>
+                    <remapping>/fishbot_diff_drive_controller/odom:=/odom</remapping>
+                </ros>
+            </plugin>
+        </gazebo>
+
+    </xacro:macro>
+</robot>

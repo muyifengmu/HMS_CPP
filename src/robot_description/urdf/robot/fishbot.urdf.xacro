@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fishbot">
+<!-- 导入外部文件所创建的xacro部件 -->
+<!-- 机器人本体部分 -->
+<xacro:include filename="$(find robot_description)/urdf/robot/base.urdf.xacro"/>
+<!-- 传感器部分 -->
+<xacro:include filename="$(find robot_description)/urdf/robot/sensor/camera.urdf.xacro"/>
+<xacro:include filename="$(find robot_description)/urdf/robot/sensor/imu.urdf.xacro"/>
+<xacro:include filename="$(find robot_description)/urdf/robot/sensor/laser.urdf.xacro"/>
+<!-- 执行器部分 -->
+<xacro:include filename="$(find robot_description)/urdf/robot/actuator/wheel.urdf.xacro"/>
+<xacro:include filename="$(find robot_description)/urdf/robot/actuator/caster.urdf.xacro"/>
+
+<!-- 差速控制插件 -->
+<!-- <xacro:include filename="$(find robot_description)/urdf/robot/plugins/gazebo_control_plugin.xacro"/> -->
+<!-- ros2_control的控制 -->
+<xacro:include filename="$(find robot_description)/urdf/robot/fishbot.ros2_control.xacro"/>
+<!-- 传感器插件 -->
+<xacro:include filename="$(find robot_description)/urdf/robot/plugins/gazebo_sensor_plugin.xacro"/>
+
+<!-- 宏调用生成机器人 -->
+<xacro:base_xacro length="0.45" radius="0.5"/>
+<xacro:imu_xacro xyz="0.0 0.0 0.02"/>
+<!-- 将深度相机固定到机器人的额头顶部 (0.45/2 = 0.225m) -->
+<xacro:camera_xacro xyz="0.50 0.0 0.225"/>
+<!-- 雷达支撑杆的底部位于机器人顶部 (0.45/2 = 0.225m) -->
+<xacro:laser_xacro xyz="0.0 0.0 0.225"/>
+<!-- 轮子的中心位于机器人侧面底部 (Z = -0.45/2 = -0.225m) -->
+<xacro:wheel_xacro wheel_name="left_wheel" xyz="0 0.52 -0.225"/>
+<xacro:wheel_xacro wheel_name="right_wheel" xyz="0 -0.52 -0.225"/>
+<xacro:caster_xacro caster_name="front_caster" xyz="0.45 0 -0.245"/>
+<xacro:caster_xacro caster_name="back_caster" xyz="-0.45 0 -0.245"/>
+<!-- 调用差速控制插件 -->
+<!-- <xacro:gazebo_control_plugin/> -->
+<!-- 调用ros2_control的控制 -->
+<xacro:fishbot_ros2_control/>
+<!-- 调用传感器插件 -->
+<xacro:gazebo_sensor_plugin/>
+
+  <!-- P3D 插件已启用，完美替代 AMCL 提供物理绝对真值定位 -->
+  <gazebo>
+    <plugin name="ground_truth_p3d" filename="libgazebo_ros_p3d.so">
+      <ros>
+        <namespace>/</namespace>
+        <remapping>odom:=ground_truth_odom</remapping>
+      </ros>
+      <body_name>base_footprint</body_name>
+      <frame_name>world</frame_name>
+      <update_rate>100.0</update_rate>
+      <xyz_offset>0 0 0</xyz_offset>
+      <rpy_offset>0 0 0</rpy_offset>
+      <gaussian_noise>0</gaussian_noise>
+    </plugin>
+  </gazebo>
+
+</robot>
